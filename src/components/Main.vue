@@ -3,18 +3,6 @@
         <div class="wrapper">
             <div class="header">
                 <h2>Hey! I'm Herbie 👋</h2>
-                <div title="CV">
-                    <Fa
-                        @click="openLink('https://herbievine.com/CV.pdf')"
-                        class="hover"
-                        icon="align-justify"
-                        prefix="fas"
-                        width="16"
-                        height="16"
-                        color="#111111"
-                        title="CV"
-                    />
-                </div>
             </div>
             <div class="body">
                 <p>
@@ -114,9 +102,6 @@ export default {
         & .header {
             font-weight: 300;
             font-size: 14px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
         & .body {
