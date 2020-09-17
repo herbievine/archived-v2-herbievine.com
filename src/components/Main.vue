@@ -3,16 +3,18 @@
         <div class="wrapper">
             <div class="header">
                 <h2>Hey! I'm Herbie 👋</h2>
-                <Fa
-                    @click="this.$router.push('/CV.pdf')"
-                    class="hover"
-                    icon="align-justify"
-                    prefix="fas"
-                    width="16"
-                    height="16"
-                    color="#111111"
-                    title="CV"
-                />
+                <div title="CV">
+                    <Fa
+                        @click="openLink('https://herbievine.com/CV.pdf')"
+                        class="hover"
+                        icon="align-justify"
+                        prefix="fas"
+                        width="16"
+                        height="16"
+                        color="#111111"
+                        title="CV"
+                    />
+                </div>
             </div>
             <div class="body">
                 <p>
@@ -33,7 +35,8 @@
                 <div
                     v-for="(icon, i) in icons"
                     :key="i"
-                    @click="openSocial(icon.url)"
+                    :title="icon.icon.toUpperCase()"
+                    @click="openLink(icon.url)"
                 >
                     <Fa
                         :icon="icon.icon"
@@ -81,7 +84,7 @@ export default {
         ]
     }),
     methods: {
-        openSocial(url) {
+        openLink(url) {
             window.open(url, '_BLANK')
         }
     }
